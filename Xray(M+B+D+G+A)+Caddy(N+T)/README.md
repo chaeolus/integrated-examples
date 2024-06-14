@@ -12,9 +12,9 @@ Xray 前置（监听 443 端口），利用 VLESS+Vision+REALITY 支持转发给
 
 5、A=VLESS+mKCP+seed
 
-6、N=NaiveProxy（基于 Caddy 的改进版 forwardproxy 插件实现，TLS 由 Caddy 提供及处理，不需配置。）
+6、N=NaiveProxy（基于 Caddy 的改进版 forwardproxy 插件实现，TLS 由 Caddy 提供及处理。）
 
-7、T=Trojan-Go（基于 Caddy 的 caddy-trojan 插件实现，TLS 由 Caddy 提供及处理，不需配置。）
+7、T=Trojan-Go（基于 Caddy 的 caddy-trojan 插件实现，TLS 由 Caddy 提供及处理。）
 
 注意：
 
@@ -30,7 +30,7 @@ Xray 前置（监听 443 端口），利用 VLESS+Vision+REALITY 支持转发给
 
 6、使用本人 Releases 中编译好的 Caddy 文件，可同时支持 NaiveProxy、Trojan-Go 及 PROXY protocol 接收等应用。
 
-7、本示例 NaiveProxy 仅支持 HTTP/2 代理应用，即 HTTPS 协议传输。
+7、本示例 NaiveProxy 仅支持 HTTPS 代理应用，即 HTTPS 协议传输。
 
 8、本示例 Trojan-Go 仅推荐使用 Trojan 应用（不使用 WebSocket 应用）：因为已有同类 WebSocket 应用，且其 WebSocket 应用不支持 WebSocket 0-RTT 与多路复用等；另外还可使用 [Trojan+WebSocket+TLS](https://github.com/lxhao61/integrated-examples/tree/main/V2Ray(Trojan%2BWebSocket)%2BNginx%5CCaddy) 应用替代，性能及兼容性更好。客户端推荐选择 Xray 客户端，支持使用指纹伪造。
 
