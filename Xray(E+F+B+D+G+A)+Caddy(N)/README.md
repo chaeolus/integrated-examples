@@ -18,7 +18,7 @@
 
 注意：
 
-1、Caddy 加 caddy-l4 插件定制编译的才可以实现 SNI 分流，目前仅支持 JSON 配置、不支持 Caddyfile 配置。
+1、Caddy 加 caddy-l4 插件定制编译才可以实现 SNI 分流，目前仅支持 JSON 配置、不支持 Caddyfile 配置。
 
 2、Xray 版本不小于 v1.7.2 才完美支持 VLESS 协议的 XTLS Vision 应用。
 
@@ -34,7 +34,7 @@
 
 8、使用本人 Releases 中编译好的 Caddy 文件，可同时支持 SNI 分流、NaiveProxy 及 PROXY protocol 等应用。
 
-9、本示例 NaiveProxy 仅支持 HTTP/2 代理应用，即 HTTPS 协议传输。
+9、本示例 NaiveProxy 仅支持 HTTPS 代理应用，即 HTTPS 协议传输。
 
 10、本示例所需 TLS 证书由 Caddy（内置 ACME 客户端） 提供，实现 TLS 证书自动申请及更新。
 
