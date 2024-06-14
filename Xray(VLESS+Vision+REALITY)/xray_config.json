@@ -22,7 +22,6 @@
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "show": false, //选填，若为 true 输出调试信息。
           "dest": "xx.yy:443", //转发给自己选定的目标网站。目标网站使用外部的一般为 xx.yy:443 ，目标网站使用自己的一般直接端口或 UDS。
           "xver": 0, //选填，默认关闭 PROXY protocol 发送。可填 1 或 2 开启 PROXY protocol 发送， 1 或 2 表示 PROXY protocol 版本。
           "serverNames": [ //必填，客户端可用的 serverName 列表，暂不支持 * 通配符。
