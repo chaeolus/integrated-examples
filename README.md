@@ -2,7 +2,7 @@
 1. 实现了 V2Ray/Xray 应用（与 Shadowsocks、mKCP 关联的应用除外）使用 Local Loopback 连接与使用 UDS（Unix Domain Socket） 连接可选。
 2. 实现了 Xray 应用（与 mKCP 关联的应用除外）的 SNI 分流连接、回落/分流连接启用了 PROXY protocol 支持。
 3. 实现了 V2Ray/Xray 与 Caddy 的应用使用 UDS（Unix Domain Socket） 连接时采用 abstract 模式，不需考虑 UDS 路径及监听进程的访问权限。
-4. 实现了 Xray 对接 Nginx 的 UDS（Unix Domain Socket） 连接（监听进程）采用附加访问权限形式，简单高效地解决了监听进程的访问权限。
+4. 实现了 Xray 与 Nginx 的应用使用 UDS（Unix Domain Socket） 连接时（回落/分流连接除外）采用附加访问权限形式，简单高效地解决了监听进程的访问权限。
 5. 实现了 JSON 配置 Caddy SNI 分流及定向 UDP 转发，且可针对不同分流端口或进程灵活决定是否开启 PROXY protocol 发送。
 6. 实现了 Caddy 所有 NaiveProxy 除了支持 HTTPS 代理应用，还同时支持 HTTP/3 代理应用，即 QUIC 协议传输。
 7. 实现了由 Caddy 提供 TLS 证书的应用，其证书申请、更新及重载更新证书都可全自动化。
@@ -78,7 +78,7 @@
 5. 目前 Caddy 从 Let's Encrypt 或 ZeroSSL 申请的免费 TLS 证书默认为 ECC 证书。
 6. 基于安全原因，WebSocket 传输方式的应用目前仅推荐使用 CDN 进行流量中转。
 7. 使用 Xray 的用户推荐使用 HTTPUpgrade 传输方式的应用替代 WebSocket 传输方式的应用，功能相同且效率更高。
-8. 若 CDN 流量中转不支持 WebSocket/HTTPUpgrade、gRPC 通过，可使用 SplitHTTP 传输方式的应用替换来解决。
+8. 若 CDN 流量中转不支持 WebSocket/HTTPUpgrade 或 gRPC 通过，可使用 SplitHTTP 传输方式的应用替换来解决。
 9. 若使用不可信的 CDN 进行流量中转，推荐使用自带加密的 VMess 或 Shadowsocks 协议配置；否则推荐使用轻量的 VLESS 或 Trojan 协议配置。
 10. 综合应用配置示例中非 TCP 传输方式的应用怎么删、换、增，请参考‘服务端单一/简单应用配置示例’中对应示例。
 11. 流量伪装与防探测网站可由其它 WEB 应用软件实现，其支持反代应用（反代 WebSocket/HTTPUpgrade、gRPC、SplitHTTP 及 H2C）与支持回落应用（提供 H2C server 及 HTTP/1.1 server 的 WEB 服务）等取决于自身，其配置自行参考 Caddy 或 Nginx 对应示例。
