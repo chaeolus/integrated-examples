@@ -6,6 +6,16 @@
   },
   "inbounds": [
     {
+      "port": 80,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "network": "tcp",
+        "address": "h2r.example.com", //修改为自己选定的目标网站
+        "port": 80,
+        "followRedirect": false
+      }
+    },
+    {
       "port": 443, //监听端口
       "protocol": "vless",
       "settings": {

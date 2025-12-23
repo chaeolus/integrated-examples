@@ -50,7 +50,8 @@
               },
               "upstreams": [{
                 "dial": "127.0.0.1:2006" //转发给本机 Trojan+HTTP 监听端口
-              }]
+              }],
+              "flush_interval": -1
             }]
           },
           {
@@ -67,6 +68,7 @@
               "upstreams": [{
                 "dial": "127.0.0.1:2011" //转发给本机 Shadowsocks+gRPC 监听端口
               }],
+              "flush_interval": -1,
               "headers": {
                 "request": {
                   "set": {

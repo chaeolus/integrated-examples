@@ -49,6 +49,7 @@
               "upstreams": [{
                 "dial": "127.0.0.1:2013" //转发给本机 VLESS+gRPC 监听端口
               }],
+              "flush_interval": -1,
               "headers": {
                 "request": {
                   "set": {

@@ -49,6 +49,7 @@
               "upstreams": [{
                 "dial": "unix/@uds2013.sock" //转发给本机 VLESS+gRPC 监听进程
               }],
+              "flush_interval": -1,
               "headers": {
                 "request": {
                   "set": {
